@@ -13,7 +13,7 @@ SELECT *
  LIMIT 10;
 
 -- 2.1
-SELECT imdbid
+SELECT * 
   FROM public.links AS t1
        INNER JOIN public.ratings AS t2 ON t1.movieid = t2.movieid   
   WHERE t2.rating = 5
@@ -21,9 +21,8 @@ SELECT imdbid
 
 -- 3.1
 SELECT COUNT(1) 
-  FROM public.links AS t1
-      LEFT JOIN public.ratings AS t2 ON t1.movieid = t2.movieid
- WHERE t2.rating IS NULL;
+  FROM public.ratings
+ WHERE rating IS NULL;
 
 -- 3.2
 SELECT userid, AVG(rating) 
