@@ -44,7 +44,7 @@ select id, dep_name, em_name, num_public
 
 --Вывести список департаментов и среднее количество публикаций для тех департаментов, в которых работает более одного главного врача (id и название --департамента, среднее количество публикаций)
 with dep as (
-  select de.id, de.name -- , count(distinct em.chief_doc_id) chief_doctor_per_department
+  select de.id, de.name
     from Employee em
          join Department de on (em.department_id = de.id)
    group by de.id, de.name
